@@ -11,10 +11,10 @@ revenue analytics, and data pipelines at SafeBoda — one of Africa's
 leading ride-hailing platforms.
 
 ## Featured Projects
-- 🔄 [Financial Transaction Reconciliation](https://github.com/nabigwaku/Financial-Transaction-Reconciliation)
-- 🎯 [Credit Risk Decision Engine](https://github.com/nabigwaku/credit-risk-engine)
-- 🚚 [Delivery Operations Optimisation](https://github.com/nabigwaku/ops-delivery-optimization)
-- ⚗️ [A/B Testing Framework](https://github.com/nabigwaku/AB-Testing-Using-Python)
+-  [Financial Transaction Reconciliation](https://github.com/nabigwaku/Financial-Transaction-Reconciliation)
+-  [Credit Risk Decision Engine](https://github.com/nabigwaku/credit-risk-engine)
+-  [Delivery Operations Optimisation](https://github.com/nabigwaku/ops-delivery-optimization)
+-  [A/B Testing Framework](https://github.com/nabigwaku/AB-Testing-Using-Python)
 
 ## Tech Stack
 SQL · Python · Tableau · Power BI · pandas · scikit-learn · ETL Pipelines
