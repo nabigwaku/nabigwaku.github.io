@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edward Samuel Nabigwaku — Senior Data Analyst</title>
+<meta name="description" content="Senior Data Analyst with 5+ years building analytics systems, BI pipelines and ML models. Based in Kampala, Uganda. Open to remote opportunities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ──────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:       #0f1117;
+  --ink-mid:   #3a3d4a;
+  --ink-soft:  #6b6f80;
+  --ink-faint: #9ea3b5;
+  --paper:     #f7f5f0;
+  --paper-mid: #edeae3;
+  --paper-card:#ffffff;
+  --teal:      #0d7377;
+  --teal-lt:   #14a19e;
+  --teal-bg:   #e8f7f7;
+  --gold:      #c9963a;
+  --gold-lt:   #f0c96d;
+  --r:         6px;
+  --r-lg:      12px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────────────────────── */
+h1,h2,h3,h4{font-family:'DM Serif Display',serif;font-weight:400;line-height:1.15;letter-spacing:-0.01em}
+h1{font-size:clamp(2.6rem,6vw,4.8rem)}
+h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}
+h3{font-size:1.25rem}
+h4{font-size:1rem;font-family:'DM Sans',sans-serif;font-weight:500}
+p{color:var(--ink-mid);font-size:0.95rem;line-height:1.7}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{font-weight:500;color:var(--ink)}
+
+/* ── LAYOUT HELPERS ─────────────────────────────────────────────────────── */
+.container{max-width:1100px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem)}
+.section{padding:5rem 0}
+.section-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:0.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--teal);font-weight:500;margin-bottom:0.75rem;display:block
+}
+.section-title{margin-bottom:0.5rem}
+.section-intro{max-width:620px;color:var(--ink-soft);margin-bottom:3rem}
+
+/* ── NAV ────────────────────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(247,245,240,0.88);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  padding:0.85rem 0;transition:box-shadow .3s
+}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.07)}
+.nav-inner{
+  max-width:1100px;margin:0 auto;
+  padding:0 clamp(1.2rem,4vw,2.5rem);
+  display:flex;align-items:center;justify-content:space-between
+}
+.nav-logo{
+  font-family:'DM Serif Display',serif;font-size:1.1rem;
+  color:var(--ink);letter-spacing:0.01em
+}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:0.82rem;letter-spacing:.04em;font-weight:400;
+  color:var(--ink-soft);transition:color .2s
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);text-decoration:none}
+.nav-cta{
+  font-size:0.8rem;font-weight:500;letter-spacing:.03em;
+  background:var(--ink);color:var(--paper);
+  padding:0.45rem 1.1rem;border-radius:50px;transition:background .2s
+}
+.nav-cta:hover{background:var(--teal);text-decoration:none}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.nav-mobile-btn span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;transition:.3s}
+
+/* ── HERO ────────────────────────────────────────────────────────────────── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:80px;position:relative;overflow:hidden
+}
+.hero-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 900px 700px at 80% 30%,rgba(13,115,119,0.06) 0%,transparent 70%),
+    radial-gradient(ellipse 500px 400px at 10% 80%,rgba(201,150,58,0.05) 0%,transparent 70%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr auto;gap:4rem;
+  align-items:center;width:100%;position:relative;z-index:1
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:0.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);font-weight:500;margin-bottom:1.5rem
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:28px;height:1.5px;background:var(--teal)
+}
+.hero-name{margin-bottom:1.2rem}
+.hero-name em{font-style:italic;color:var(--teal)}
+.hero-desc{
+  font-size:1.05rem;color:var(--ink-mid);max-width:520px;
+  line-height:1.8;margin-bottom:2.2rem
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.5rem}
+.tag{
+  font-size:0.72rem;letter-spacing:.04em;font-weight:500;
+  padding:4px 12px;border-radius:50px;
+  border:1px solid var(--paper-mid);background:var(--paper-card);
+  color:var(--ink-mid);transition:all .2s
+}
+.tag:hover{border-color:var(--teal);color:var(--teal)}
+.tag.filled{background:var(--teal-bg);border-color:var(--teal);color:var(--teal)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--paper);
+  padding:.7rem 1.6rem;border-radius:50px;
+  font-size:0.85rem;font-weight:500;letter-spacing:.02em;
+  transition:all .25s;border:1.5px solid var(--ink)
+}
+.btn-primary:hover{background:var(--teal);border-color:var(--teal);text-decoration:none}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--ink);
+  padding:.7rem 1.5rem;border-radius:50px;
+  font-size:0.85rem;font-weight:500;letter-spacing:.02em;
+  transition:all .25s;border:1.5px solid rgba(0,0,0,0.18)
+}
+.btn-outline:hover{border-color:var(--ink);text-decoration:none}
+.hero-card{
+  background:var(--paper-card);border:1px solid var(--paper-mid);
+  border-radius:var(--r-lg);padding:2rem 1.8rem;min-width:220px;
+  box-shadow:0 8px 40px rgba(0,0,0,0.06)
+}
+.hero-card-stat{
+  padding:1rem 0;border-bottom:1px solid var(--paper-mid)
+}
+.hero-card-stat:last-child{border-bottom:none;padding-bottom:0}
+.hero-card-stat:first-child{padding-top:0}
+.hcs-num{
+  font-family:'DM Serif Display',serif;font-size:2rem;
+  color:var(--ink);line-height:1.1
+}
+.hcs-num span{font-size:1rem;color:var(--teal)}
+.hcs-label{font-size:0.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.hero-location{
+  display:flex;align-items:center;gap:6px;margin-top:1.8rem;
+  font-size:0.78rem;color:var(--ink-soft)
+}
+.dot-green{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ── ABOUT ──────────────────────────────────────────────────────────────── */
+#about{background:var(--paper-card);border-top:1px solid var(--paper-mid);border-bottom:1px solid var(--paper-mid)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text p{margin-bottom:1.1rem}
+.about-text p:last-child{margin-bottom:0}
+.about-callout{
+  background:var(--teal-bg);border-left:3px solid var(--teal);
+  padding:1.2rem 1.4rem;border-radius:0 var(--r) var(--r) 0;
+  margin:1.6rem 0;font-size:0.9rem;color:var(--teal);font-style:italic
+}
+.skills-col .skill-group{margin-bottom:1.8rem}
+.skill-group-label{
+  font-size:0.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint);font-weight:500;margin-bottom:0.7rem
+}
+.skill-pills{display:flex;flex-wrap:wrap;gap:6px}
+.skill-pill{
+  font-size:0.78rem;padding:4px 12px;border-radius:50px;
+  background:var(--paper);border:1px solid var(--paper-mid);
+  color:var(--ink-mid);font-weight:400
+}
+.skill-pill.strong{
+  background:var(--ink);color:var(--paper);border-color:var(--ink)
+}
+.skill-pill.teal{
+  background:var(--teal);color:#fff;border-color:var(--teal)
+}
+
+/* ── EXPERIENCE ─────────────────────────────────────────────────────────── */
+#experience{background:var(--paper)}
+.exp-list{display:flex;flex-direction:column;gap:0}
+.exp-item{
+  display:grid;grid-template-columns:180px 1fr;gap:3rem;
+  padding:2.5rem 0;border-bottom:1px solid var(--paper-mid);
+  position:relative
+}
+.exp-item:last-child{border-bottom:none}
+.exp-meta{padding-top:4px}
+.exp-period{
+  font-size:0.75rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--teal);font-weight:500;margin-bottom:0.4rem
+}
+.exp-company{
+  font-size:1rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem
+}
+.exp-loc{font-size:0.78rem;color:var(--ink-faint)}
+.exp-dot{
+  position:absolute;left:180px;top:2.9rem;
+  width:8px;height:8px;border-radius:50%;
+  border:2px solid var(--teal);background:var(--paper);
+  transform:translateX(calc(-50% + 1.5rem));
+}
+.exp-content{}
+.exp-role{margin-bottom:0.5rem;font-size:1.15rem}
+.exp-badge{
+  display:inline-block;font-size:0.68rem;letter-spacing:.06em;
+  text-transform:uppercase;font-weight:500;padding:2px 9px;
+  border-radius:50px;background:var(--teal-bg);color:var(--teal);
+  border:1px solid rgba(13,115,119,0.2);margin-bottom:1rem
+}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.exp-bullets li{
+  font-size:0.88rem;color:var(--ink-mid);line-height:1.6;
+  padding-left:1.2rem;position:relative
+}
+.exp-bullets li::before{
+  content:'→';position:absolute;left:0;color:var(--teal);font-size:0.8rem
+}
+.exp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:1rem}
+.exp-tag{
+  font-size:0.68rem;padding:2px 9px;border-radius:50px;
+  background:var(--paper);border:1px solid var(--paper-mid);
+  color:var(--ink-soft)
+}
+
+/* ── PROJECTS ────────────────────────────────────────────────────────────── */
+#projects{background:var(--ink)}
+#projects .section-label{color:var(--gold-lt)}
+#projects .section-title{color:var(--paper)}
+#projects .section-intro{color:rgba(247,245,240,0.55)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);border-radius:var(--r-lg);overflow:hidden}
+.project-card{
+  background:var(--ink);padding:2.2rem 2rem;
+  transition:background .25s;cursor:default;position:relative;overflow:hidden
+}
+.project-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(13,115,119,0.12),transparent 60%);
+  opacity:0;transition:opacity .4s;pointer-events:none
+}
+.project-card:hover::before{opacity:1}
+.project-card:hover{background:#161a22}
+.project-num{
+  font-size:0.65rem;letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(247,245,240,0.3);margin-bottom:1.2rem
+}
+.project-icon{
+  width:40px;height:40px;border-radius:var(--r);
+  background:rgba(13,115,119,0.15);border:1px solid rgba(13,115,119,0.25);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.2rem;font-size:1.1rem
+}
+.project-title{
+  font-family:'DM Serif Display',serif;font-size:1.25rem;
+  color:var(--paper);margin-bottom:0.6rem
+}
+.project-desc{font-size:0.84rem;color:rgba(247,245,240,0.55);line-height:1.65;margin-bottom:1.2rem}
+.project-highlights{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.4rem}
+.project-highlights li{
+  font-size:0.78rem;color:rgba(247,245,240,0.7);
+  padding-left:1rem;position:relative;line-height:1.5
+}
+.project-highlights li::before{content:'·';position:absolute;left:0;color:var(--teal-lt)}
+.project-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.project-stack{display:flex;flex-wrap:wrap;gap:4px}
+.pstack{
+  font-size:0.65rem;letter-spacing:.04em;padding:2px 8px;
+  border-radius:50px;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);color:rgba(247,245,240,0.5)
+}
+.project-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:0.75rem;color:var(--teal-lt);font-weight:500;
+  transition:color .2s
+}
+.project-link:hover{color:var(--gold-lt);text-decoration:none}
+.project-link svg{width:13px;height:13px}
+
+/* ── EDUCATION ───────────────────────────────────────────────────────────── */
+#education{background:var(--paper-card);border-top:1px solid var(--paper-mid)}
+.edu-card{
+  display:flex;gap:2rem;align-items:flex-start;
+  background:var(--paper);border:1px solid var(--paper-mid);
+  border-radius:var(--r-lg);padding:2rem 2rem;max-width:680px
+}
+.edu-icon{
+  width:52px;height:52px;flex-shrink:0;border-radius:var(--r);
+  background:var(--teal-bg);border:1px solid rgba(13,115,119,0.15);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem
+}
+.edu-degree{font-size:1.1rem;margin-bottom:0.2rem}
+.edu-uni{font-size:0.9rem;color:var(--teal);font-weight:500;margin-bottom:0.3rem}
+.edu-year{font-size:0.78rem;color:var(--ink-faint)}
+.edu-desc{font-size:0.84rem;color:var(--ink-mid);margin-top:0.6rem}
+
+/* ── CONTACT ─────────────────────────────────────────────────────────────── */
+#contact{background:var(--paper);border-top:1px solid var(--paper-mid)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-headline{margin-bottom:1rem}
+.contact-sub{font-size:0.95rem;color:var(--ink-mid);margin-bottom:2rem;line-height:1.7}
+.contact-links{display:flex;flex-direction:column;gap:0.9rem}
+.contact-link{
+  display:flex;align-items:center;gap:12px;padding:1rem 1.2rem;
+  background:var(--paper-card);border:1px solid var(--paper-mid);
+  border-radius:var(--r-lg);transition:all .2s;
+  font-size:0.88rem;color:var(--ink);text-decoration:none
+}
+.contact-link:hover{border-color:var(--teal);background:var(--teal-bg);text-decoration:none;color:var(--ink)}
+.contact-link-icon{
+  width:36px;height:36px;border-radius:var(--r);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:1rem
+}
+.clink-label{font-weight:500;color:var(--ink)}
+.clink-val{font-size:0.78rem;color:var(--ink-soft)}
+.availability-card{
+  background:var(--paper-card);border:1px solid var(--paper-mid);
+  border-radius:var(--r-lg);padding:2rem;
+}
+.avail-header{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem}
+.avail-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite}
+.avail-title{font-weight:500;font-size:0.95rem}
+.avail-items{display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1.5rem}
+.avail-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--ink-mid)}
+.avail-item::before{content:'✓';color:var(--teal);font-weight:500;font-size:0.8rem}
+.avail-note{font-size:0.78rem;color:var(--ink-faint);line-height:1.5;border-top:1px solid var(--paper-mid);padding-top:1rem}
+
+/* ── FOOTER ──────────────────────────────────────────────────────────────── */
+footer{
+  background:var(--ink);color:rgba(247,245,240,0.4);
+  text-align:center;padding:2rem 0;font-size:0.78rem
+}
+footer a{color:rgba(247,245,240,0.5)}
+
+/* ── ANIMATIONS ──────────────────────────────────────────────────────────── */
+.fade-up{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .7s ease,transform .7s ease
+}
+.fade-up.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-card{display:grid;grid-template-columns:repeat(3,1fr);gap:0;min-width:unset}
+  .hero-card-stat{padding:1rem;border-bottom:none;border-right:1px solid var(--paper-mid)}
+  .hero-card-stat:last-child{border-right:none}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .exp-item{grid-template-columns:1fr;gap:0.5rem}
+  .exp-meta{padding-top:0}
+  .exp-dot{display:none}
+  .projects-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .nav-links,.nav-cta{display:none}
+  .nav-mobile-btn{display:block}
+}
+@media(max-width:540px){
+  .hero-card{grid-template-columns:1fr;gap:0}
+  .hero-card-stat{border-right:none;border-bottom:1px solid var(--paper-mid)}
+  .hero-card-stat:last-child{border-bottom:none}
+  .section{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Edward <span>Nabigwaku</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:nabigwakuedward@gmail.com" class="nav-cta">Get in touch</a>
+    <button class="nav-mobile-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow fade-up">Senior Data Analyst</div>
+        <h1 class="hero-name fade-up" style="animation-delay:.1s">
+          Edward<br><em>Samuel</em><br>Nabigwaku
+        </h1>
+        <p class="hero-desc fade-up" style="animation-delay:.2s">
+          I build the analytics systems that businesses run on — pipelines, dashboards, 
+          KPI frameworks, and ML models. 5+ years at SafeBoda, one of Africa's leading 
+          ride-hailing platforms.
+        </p>
+        <div class="hero-tags fade-up" style="animation-delay:.3s">
+          <span class="tag filled">SQL</span>
+          <span class="tag filled">Python</span>
+          <span class="tag filled">Tableau</span>
+          <span class="tag filled">Power BI</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">ETL Pipelines</span>
+          <span class="tag">Data Warehousing</span>
+          <span class="tag">BI Engineering</span>
+        </div>
+        <div class="hero-actions fade-up" style="animation-delay:.4s">
+          <a href="#projects" class="btn-primary">
+            View projects
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/nabigwaku" target="_blank" rel="noopener" class="btn-outline">
+            GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/edward-samuel-nabigwaku-014b8b129/" target="_blank" rel="noopener" class="btn-outline">
+            LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="fade-up" style="animation-delay:.3s">
+        <div class="hero-card">
+          <div class="hero-card-stat">
+            <div class="hcs-num">5<span>+</span></div>
+            <div class="hcs-label">Years experience</div>
+          </div>
+          <div class="hero-card-stat">
+            <div class="hcs-num">10<span>+</span></div>
+            <div class="hcs-label">BI dashboards built</div>
+          </div>
+          <div class="hero-card-stat">
+            <div class="hcs-num">4</div>
+            <div class="hcs-label">Public ML projects</div>
+          </div>
+          <div class="hero-location">
+            <span class="dot-green"></span>
+            Kampala, Uganda · Open to remote
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <span class="section-label">About me</span>
+        <h2 class="section-title">Turning data into decisions</h2>
+        <p>I'm a Senior Data Analyst based in Kampala, Uganda, with a Software Engineering background from Makerere University. For the past 5+ years, I've been building the analytics infrastructure that SafeBoda — one of Africa's leading ride-hailing platforms — relies on to make daily business decisions.</p>
+        <div class="about-callout">
+          "I believe the real value of data work is only realised when insights reach the right people, in a format they can act on."
+        </div>
+        <p>My work sits at the intersection of engineering and business. I'm as comfortable writing advanced SQL stored procedures as I am presenting findings to C-level executives. I specialise in revenue analytics, operational performance, KPI governance, and financial reconciliation.</p>
+        <p>Outside my day job, I actively build and publish machine learning and analytics projects — a credit risk engine, an automated financial reconciliation pipeline, and an operational delivery analysis system. I'm currently exploring senior analytics and analytics engineering roles, particularly remote opportunities with data-mature companies.</p>
+      </div>
+      <div class="skills-col fade-up" style="animation-delay:.15s">
+        <span class="section-label">Technical skills</span>
+        <div class="skill-group">
+          <div class="skill-group-label">Core languages</div>
+          <div class="skill-pills">
+            <span class="skill-pill strong">SQL (Advanced)</span>
+            <span class="skill-pill strong">Python</span>
+            <span class="skill-pill">pandas</span>
+            <span class="skill-pill">NumPy</span>
+            <span class="skill-pill">scikit-learn</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">BI & Visualisation</div>
+          <div class="skill-pills">
+            <span class="skill-pill teal">Tableau</span>
+            <span class="skill-pill teal">Power BI</span>
+            <span class="skill-pill">DAX</span>
+            <span class="skill-pill">Excel (Advanced)</span>
+            <span class="skill-pill">xlsxwriter</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Data engineering</div>
+          <div class="skill-pills">
+            <span class="skill-pill">ETL Pipelines</span>
+            <span class="skill-pill">Data Warehousing</span>
+            <span class="skill-pill">Pentaho</span>
+            <span class="skill-pill">Anomaly Detection</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Analytics domains</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Revenue Analytics</span>
+            <span class="skill-pill">Cohort Analysis</span>
+            <span class="skill-pill">KPI Governance</span>
+            <span class="skill-pill">A/B Testing</span>
+            <span class="skill-pill">Financial Reconciliation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Tools</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Jupyter</span>
+            <span class="skill-pill">Matplotlib</span>
+            <span class="skill-pill">Seaborn</span>
+            <span class="skill-pill">rapidfuzz</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────────────────────────────────────── -->
+<section id="experience" class="section">
+  <div class="container">
+    <span class="section-label fade-up">Career</span>
+    <h2 class="section-title fade-up">Professional experience</h2>
+    <p class="section-intro fade-up">Seven years building analytics capability at a fast-scaling African tech company — from IT support to senior BI engineering.</p>
+
+    <div class="exp-list">
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">Dec 2022 – Present</div>
+          <div class="exp-company">SafeBoda</div>
+          <div class="exp-loc">Kampala, Uganda</div>
+        </div>
+        <div class="exp-content">
+          <span class="exp-badge">Current role</span>
+          <h3 class="exp-role">Senior BI &amp; Data Analyst</h3>
+          <ul class="exp-bullets">
+            <li>Engineered end-to-end data pipelines ingesting operational and production data into analytics warehouses, enabling real-time revenue and performance reporting across 3+ business units</li>
+            <li>Designed automated BI dashboards (Tableau &amp; Power BI) tracking revenue performance, operational efficiency, and driver/user behaviour trends — significantly reducing ad hoc reporting requests through standardised self-serve analytics</li>
+            <li>Built 10+ advanced SQL analytical models and stored procedures powering recurring BI workflows across engineering, finance, and operations</li>
+            <li>Standardised KPI definitions across departments, eliminating conflicting metrics and improving executive confidence in reported figures</li>
+            <li>Implemented data validation frameworks, reconciliation logic, and anomaly detection systems — improving reporting accuracy and reducing data quality incidents</li>
+            <li>Delivered executive-level analytics packages supporting C-suite decisions on growth strategy and cost optimisation</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">SQL</span><span class="exp-tag">Tableau</span><span class="exp-tag">Power BI</span>
+            <span class="exp-tag">Python</span><span class="exp-tag">ETL</span><span class="exp-tag">Revenue Analytics</span>
+            <span class="exp-tag">KPI Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">Feb 2019 – Dec 2022</div>
+          <div class="exp-company">SafeBoda</div>
+          <div class="exp-loc">Kampala, Uganda</div>
+        </div>
+        <div class="exp-content">
+          <h3 class="exp-role">BI &amp; Data Analyst</h3>
+          <ul class="exp-bullets">
+            <li>Developed SQL-based reporting systems for operational and financial analytics, replacing manual processes and establishing consistent daily and monthly reporting cycles</li>
+            <li>Built and maintained Power BI dashboards for cross-functional performance tracking, reducing manual Excel reporting effort significantly across business units</li>
+            <li>Conducted cohort analysis, variance analysis, and trend monitoring — proactively surfacing operational risks and performance shifts for leadership</li>
+            <li>Automated recurring reports, eliminating manual workload and improving reliability and timeliness of business intelligence outputs</li>
+            <li>Supported revenue assurance through systematic data reconciliation and ledger modelling</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">SQL</span><span class="exp-tag">Power BI</span><span class="exp-tag">Cohort Analysis</span>
+            <span class="exp-tag">Reconciliation</span><span class="exp-tag">Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-up">
+        <div class="exp-meta">
+          <div class="exp-period">May 2018 – Feb 2019</div>
+          <div class="exp-company">SafeBoda</div>
+          <div class="exp-loc">Kampala, Uganda</div>
+        </div>
+        <div class="exp-content">
+          <h3 class="exp-role">IT Assistant</h3>
+          <ul class="exp-bullets">
+            <li>Supported internal systems operations, data access management, and technical troubleshooting for operational tools and platforms</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Systems Operations</span><span class="exp-tag">Technical Support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────────────────────────────── -->
+<section id="projects" class="section">
+  <div class="container">
+    <span class="section-label fade-up" style="color:#8cd9d0">Portfolio</span>
+    <h2 class="section-title fade-up" style="color:var(--paper)">Selected projects</h2>
+    <p class="section-intro fade-up">End-to-end analytics and machine learning projects — from financial reconciliation to credit risk modelling and operational optimisation.</p>
+
+    <div class="projects-grid">
+
+      <div class="project-card fade-up" onmousemove="tilt(event,this)">
+        <div class="project-num">01 / Featured</div>
+        <div class="project-icon">🔄</div>
+        <div class="project-title">Financial Transaction Reconciliation</div>
+        <div class="project-desc">End-to-end automated reconciliation workflow matching bank statement transactions against internal ledger records — directly replicating financial operations work at SafeBoda.</div>
+        <ul class="project-highlights">
+          <li>500+ transactions matched using progressive logic: exact, tolerance-based, and fuzzy reference matching</li>
+          <li>Feature engineering: date windows, amount tolerance thresholds, text similarity scoring (rapidfuzz)</li>
+          <li>Business-ready KPI outputs (reconciliation rate, exception volumes) feeding directly into Tableau dashboards</li>
+          <li>Handles real-world challenges: timing delays, FX rounding, formatting inconsistencies</li>
+        </ul>
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="pstack">Python</span><span class="pstack">pandas</span>
+            <span class="pstack">rapidfuzz</span><span class="pstack">Tableau</span><span class="pstack">Jupyter</span>
+          </div>
+          <a href="https://github.com/nabigwaku/Financial-Transaction-Reconciliation" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up" style="animation-delay:.1s" onmousemove="tilt(event,this)">
+        <div class="project-num">02 / Machine Learning</div>
+        <div class="project-icon">🎯</div>
+        <div class="project-title">Credit Risk Decision Engine</div>
+        <div class="project-desc">Random Forest ML model predicting loan default probability with risk-tiered approval logic — automating 60% of loan application processing while protecting bank capital.</div>
+        <ul class="project-highlights">
+          <li>Risk bands: Auto-Approve (&lt;25%), Manual Review (25–55%), Decline (&gt;55%)</li>
+          <li>5:1 risk penalty optimises model for loss prevention over approval volume</li>
+          <li>Full ML pipeline: cleaning, feature engineering, training, probability calibration</li>
+          <li>Tableau audit trail for full decision traceability</li>
+        </ul>
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="pstack">Python</span><span class="pstack">scikit-learn</span>
+            <span class="pstack">Random Forest</span><span class="pstack">Tableau</span>
+          </div>
+          <a href="https://github.com/nabigwaku/credit-risk-engine" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up" style="animation-delay:.15s" onmousemove="tilt(event,this)">
+        <div class="project-num">03 / Operations Analytics</div>
+        <div class="project-icon">🚚</div>
+        <div class="project-title">Delivery Operations Optimisation</div>
+        <div class="project-desc">Delivery performance analysis across 520 deliveries, 5 regions, and 40 drivers — converting operational data into fleet planning recommendations and a stakeholder Excel dashboard.</div>
+        <ul class="project-highlights">
+          <li>North region delay rate identified as 2× the Central region's — driving targeted fleet reallocation</li>
+          <li>Motorbikes confirmed as optimal vehicle type: lowest delay rate and lowest operational cost</li>
+          <li>On-time delivery rate target of ≥80% established as formal operational KPI</li>
+          <li>Executive Excel dashboard with KPI summary, monthly trends, and filterable raw data</li>
+        </ul>
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="pstack">Python</span><span class="pstack">Excel</span>
+            <span class="pstack">xlsxwriter</span><span class="pstack">Matplotlib</span><span class="pstack">Seaborn</span>
+          </div>
+          <a href="https://github.com/nabigwaku/ops-delivery-optimization" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card fade-up" style="animation-delay:.2s" onmousemove="tilt(event,this)">
+        <div class="project-num">04 / Statistical Analysis</div>
+        <div class="project-icon">⚗️</div>
+        <div class="project-title">A/B Testing Framework</div>
+        <div class="project-desc">Structured A/B testing framework in Python covering experiment design, sample size calculation, statistical significance testing, and results interpretation for product and marketing decisions.</div>
+        <ul class="project-highlights">
+          <li>Full experiment design workflow from hypothesis to conclusion</li>
+          <li>Sample size calculation and power analysis built in</li>
+          <li>Statistical significance testing with clear business interpretation</li>
+          <li>Applicable to product feature testing and marketing campaign analysis</li>
+        </ul>
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="pstack">Python</span><span class="pstack">SciPy</span>
+            <span class="pstack">Statistics</span><span class="pstack">Jupyter</span>
+          </div>
+          <a href="https://github.com/nabigwaku/AB-Testing-Using-Python" target="_blank" rel="noopener" class="project-link">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem;text-align:center">
+      <a href="https://github.com/nabigwaku" target="_blank" rel="noopener" class="btn-outline" style="color:var(--paper);border-color:rgba(255,255,255,0.2)">
+        View all 18 repositories on GitHub
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ──────────────────────────────────────────────────────────── -->
+<section id="education" class="section">
+  <div class="container">
+    <span class="section-label fade-up">Education</span>
+    <h2 class="section-title fade-up" style="margin-bottom:2rem">Academic background</h2>
+    <div class="edu-card fade-up">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <h3 class="edu-degree">Bachelor of Science in Software Engineering</h3>
+        <div class="edu-uni">Makerere University</div>
+        <div class="edu-year">2016 – 2020 · Kampala, Uganda</div>
+        <div class="edu-desc">Uganda's leading public research university. Programme covering software systems, data structures, databases, algorithms, and software engineering principles — providing the technical foundation for a career in data analytics and engineering.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────────────────── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <span class="section-label">Get in touch</span>
+        <h2 class="contact-headline">Let's work<br>together</h2>
+        <p class="contact-sub">I'm open to senior analytics roles, analytics engineering opportunities, and remote positions with data-mature companies in fintech, logistics, marketplaces, or tech. Always happy to chat about data, projects, or career opportunities.</p>
+        <div class="contact-links">
+          <a href="mailto:nabigwakuedward@gmail.com" class="contact-link">
+            <div class="contact-link-icon" style="background:#fef3c7">✉️</div>
+            <div>
+              <div class="clink-label">Email</div>
+              <div class="clink-val">nabigwakuedward@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/edward-samuel-nabigwaku-014b8b129/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon" style="background:#dbeafe">💼</div>
+            <div>
+              <div class="clink-label">LinkedIn</div>
+              <div class="clink-val">edward-samuel-nabigwaku</div>
+            </div>
+          </a>
+          <a href="https://github.com/nabigwaku" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon" style="background:#f3f4f6">🐙</div>
+            <div>
+              <div class="clink-label">GitHub</div>
+              <div class="clink-val">github.com/nabigwaku</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="fade-up" style="animation-delay:.15s">
+        <div class="availability-card">
+          <div class="avail-header">
+            <span class="avail-dot"></span>
+            <span class="avail-title">Currently available for</span>
+          </div>
+          <div class="avail-items">
+            <div class="avail-item">Senior Data Analyst roles (local &amp; remote)</div>
+            <div class="avail-item">Analytics Engineering opportunities</div>
+            <div class="avail-item">BI Lead / Head of Analytics positions</div>
+            <div class="avail-item">Freelance data &amp; analytics projects</div>
+            <div class="avail-item">Collaboration on open-source analytics</div>
+          </div>
+          <div class="avail-note">Based in Kampala, Uganda (UTC+3). Available for remote work across all time zones. Open to EAC regional opportunities in Kenya, Tanzania, Rwanda.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p>© 2026 Edward Samuel Nabigwaku · Built with HTML, CSS &amp; JavaScript · Hosted on GitHub Pages</p>
+  </div>
+</footer>
+
+<script>
+/* ── Navbar scroll effect ─── */
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+/* ── Fade-up on scroll ─── */
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+/* ── Active nav link ─── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const sObs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>l.classList.remove('active'));
+      const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(link) link.classList.add('active');
+    }
+  });
+},{threshold:0.4});
+sections.forEach(s=>sObs.observe(s));
+
+/* ── Project card mouse glow ─── */
+function tilt(e, card){
+  const r = card.getBoundingClientRect();
+  const x = ((e.clientX - r.left) / r.width * 100).toFixed(1);
+  const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+  card.style.setProperty('--mx', x + '%');
+  card.style.setProperty('--my', y + '%');
+}
+
+/* ── Mobile menu ─── */
+let menuOpen = false;
+function toggleMenu(){
+  menuOpen = !menuOpen;
+  const links = document.querySelector('.nav-links');
+  const cta   = document.querySelector('.nav-cta');
+  if(menuOpen){
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:60px;right:0;left:0;background:var(--paper);border-bottom:1px solid var(--paper-mid);padding:1.5rem 2rem;gap:1.2rem;z-index:99';
+    if(cta) cta.style.display='inline-flex';
+  } else {
+    links.style.cssText = '';
+    if(cta) cta.style.display='';
+  }
+}
+</script>
+</body>
+</html>
